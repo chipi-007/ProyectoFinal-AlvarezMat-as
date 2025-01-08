@@ -8,15 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Mostrar opciones de tipo de impresión
   mostrarOpciones("tiposImpresion", "Elige un tipo de impresión");
 
-  // Manejo de selección de tipo de impresión
-  contenedorCards.addEventListener("click", (e) => {
-    if (e.target.classList.contains("btn-seleccionar")) {
-      seleccion.tipo = e.target.dataset.tipoimpresion;
-      mensaje.textContent = `Has seleccionado: ${seleccion.tipo.toUpperCase()}. Elige un tamaño.`;
-      mostrarOpciones("tamanos", "Elige un tamaño para tu impresión");
-    }
-  });
-
   // Mostrar opciones dinámicas (con cards)
   function mostrarOpciones(categoria, titulo) {
     fetch("./datos/precios.json")
@@ -40,9 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
             <h3>${key}</h3>
             <p>${descripcion}</p>
             ${porcentajePrecio ? `<p>Recargo: ${porcentajePrecio}% sobre el precio base</p>` : ''}
-            <button class="btn-seleccionar" data-${categoria}="${key}">Seleccionar</button>
           `;
-          div.querySelector(".btn-seleccionar").addEventListener("click", () => {
+
+          // Selección al hacer clic en la carta
+          div.addEventListener("click", () => {
             if (categoria === "tiposImpresion") {
               seleccion.tipo = key;
               seleccion.porcentaje = porcentajePrecio || 0;
@@ -55,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             mensaje.textContent = `Has seleccionado: ${key}.`;
           });
+
           opcionesContainer.appendChild(div);
         }
 

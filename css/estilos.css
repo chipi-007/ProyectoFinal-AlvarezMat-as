@@ -11,6 +11,7 @@ body {
     color: #333;
 }
 
+/* Estilo del header */
 header {
     display: flex;
     justify-content: center;
@@ -96,7 +97,6 @@ section {
     color: #555;
 }
 
-/* Estilos del contenedor de opciones */
 .opciones {
     background-color: #34495e;
     color: whitesmoke;
@@ -109,6 +109,7 @@ section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Botones */
 .btn-seleccionar {
     margin-top: 1rem;
     padding: 0.75rem 1.5rem;
@@ -126,7 +127,7 @@ section {
     transform: scale(1.05);
 }
 
-/* Estilos para el contenedor dinámico (resumen) */
+/* Contenedor dinámico */
 #contenedor-dinamico {
     padding-bottom: 2rem;
     text-align: center;
@@ -152,13 +153,7 @@ section {
     margin: 5px 0;
 }
 
-#contenedor-dinamico label {
-    font-weight: bold;
-    margin-top: 1rem;
-    display: block;
-}
-
-/* Botón de reinicio */
+/* Botón reinicio */
 #reiniciar {
     margin-top: 20px;
     padding: 0.75rem 2rem;
@@ -175,42 +170,6 @@ section {
     background-color: #c0392b;
     transform: scale(1.05);
 }
-
-/* Responsividad */
-@media (max-width: 768px) {
-    section {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .contenedor-cards {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .opciones .card {
-        flex-basis: 100%;
-    }
-
-    .card img {
-        height: 150px;
-    }
-}
-
-@media (max-width: 480px) {
-    .card img {
-        height: 120px;
-    }
-    
-    .btn-seleccionar {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-    }
-
-    #reiniciar {
-        padding: 0.5rem 1.5rem;
-        font-size: 0.9rem;
-    }
-}
 /* Estilos para el footer */
 footer {
     background-color: #34495e;
@@ -219,7 +178,6 @@ footer {
     padding: 1.5rem 0;
     font-size: 0.9rem;
     border-top: 2px solid #2ecc71;
-    position: relative;
 }
 
 footer a {
@@ -234,6 +192,7 @@ footer a:hover {
     color: #27ae60;
 }
 
+/* Botón de Instagram */
 footer .boton-instagram {
     background: none;
     border: none;
@@ -259,15 +218,55 @@ footer .imagen-instagram:hover {
     opacity: 0.8;
 }
 
-/* Responsividad para el footer */
-@media (max-width: 768px) {
+/* Media Queries */
+
+/* Para tablets y pantallas más grandes */
+@media (min-width: 768px) {
+    .contenedor-cards {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
+    .btn-seleccionar, #reiniciar {
+        font-size: 1rem;
+        padding: 0.8rem 2rem;
+    }
     footer {
-        font-size: 0.8rem;
-        padding: 1rem;
+        font-size: 0.9rem;
     }
 
     footer .imagen-instagram {
-        width: 25px;
-        height: 25px;
+        width: 30px;
+        height: 30px;
     }
 }
+
+/* Para celulares */
+@media (max-width: 768px) {
+    section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contenedor-cards {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .card img {
+        height: 150px;
+    }
+
+    .btn-seleccionar, #reiniciar {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+        footer {
+            font-size: 0.8rem;
+            padding: 1rem;
+        }
+    
+        footer .imagen-instagram {
+            width: 25px;
+            height: 25px;
+        }
+    }
+
