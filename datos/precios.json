@@ -1,0 +1,41 @@
+{
+    "tiposImpresion": {
+      "Filamento": {
+        "descripcion": "Impresiones más económicas, adecuadas para piezas grandes o en masa",
+        "porcentajePrecio": 0
+      },
+      "Resina": {
+        "descripcion": "Alta calidad de detalles, ideal para miniaturas y modelos complejos",
+        "porcentajePrecio": 25
+      }
+    },
+    "tamanos": {
+      "Reducido": {
+        "descripcion": "Hasta 10 cm",
+        "precio": 7500
+      },
+      "Mediano": {
+        "descripcion": "Entre 11 y 20 cm",
+        "precio": 15000
+      },
+      "Grande": {
+        "descripcion": "Más de 20 cm",
+        "precio": 20000
+      },
+      "Cantidad": {
+        "descripcion": "10 unidades hasta 10 cm",
+        "precio": 50000
+      }
+    },
+    "acabados": {
+      "Lijado": {
+        "descripcion": "Con lijado sin pintar",
+        "precio": 0
+      },
+      "Pintado": {
+        "descripcion": "Con lijado y pintura",
+        "precio": 15000
+      }
+    }
+  }
+  
